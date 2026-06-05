@@ -108,19 +108,15 @@ function HeroSection() {
         </div>
       </div>
       <div className="relative">
-        <div className="marble-plinth marble-plinth-hero" aria-hidden="true" />
-        <div className="relative overflow-hidden rounded-lg border border-gold/35 bg-paper p-3 shadow-soft">
-          <div className="mb-3 flex items-center justify-between border-b border-gold/20 pb-3 text-[11px] font-black uppercase tracking-[0.28em] text-goldDark">
-            <span>01 PaperFlow</span>
-            <span>Masterclass</span>
-          </div>
+        <div className="hero-showcase-aura" aria-hidden="true" />
+        <div className="hero-showcase">
           <Image
-            src="/hero-paperflow.png"
-            alt="PaperFlow Kursvorschau mit Buch, Laptop und Erfolgsdiagramm"
-            width={1200}
-            height={850}
+            src="/paperflow-hero-laptop.png"
+            alt="PaperFlow Academy Arbeitsplatz mit Laptop, Buchplanung und goldenem Erfolgsdesign"
+            width={1609}
+            height={977}
             priority
-            className="h-auto w-full rounded-md"
+            className="h-full w-full object-cover"
           />
         </div>
       </div>
