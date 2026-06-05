@@ -153,7 +153,7 @@ function ProgressSection() {
         <div>
           <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">Dein Fortschritt</p>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl">Vom ersten Modul bis zum fertigen Buch</h2>
-          <p className="mt-5 text-sm leading-7 text-white/70">
+          <p className="mt-5 max-w-md text-sm leading-7 text-white/80">
             Die Fortschrittskarten zeigen beispielhaft, wie ein Lernbereich aussehen kann. Der Gesamtfortschritt fasst alle Module zusammen.
           </p>
           <div className="mt-8 inline-flex h-44 w-44 items-center justify-center rounded-full bg-[conic-gradient(#c89b4f_0_29%,rgba(255,255,255,0.15)_29%_100%)] p-3">
@@ -165,13 +165,13 @@ function ProgressSection() {
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {modules.map((module) => (
-            <article key={module.slug} className="rounded-lg border border-gold/20 bg-white/8 p-5">
+            <article key={module.slug} className="rounded-lg border border-gold/30 bg-white/10 p-5 shadow-[0_14px_34px_rgba(0,0,0,0.16)]">
               <div className="flex items-center justify-between gap-3">
                 <h3 className="font-black">{module.title}</h3>
                 <span className="text-sm font-black text-gold">{module.progress}%</span>
               </div>
-              <p className="mt-2 text-xs font-bold uppercase text-white/55">{module.status}</p>
-              <div className="mt-4 h-2 rounded-full bg-white/12">
+              <p className="mt-2 text-xs font-bold uppercase text-white/80">{module.status}</p>
+              <div className="mt-4 h-2 rounded-full bg-white/25">
                 <div className="h-full rounded-full bg-success" style={{ width: `${module.progress}%` }} />
               </div>
             </article>

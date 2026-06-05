@@ -25,6 +25,10 @@
         color: var(--ink);
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background:
+          linear-gradient(118deg, transparent 0 17%, rgba(111, 60, 100, 0.075) 18%, transparent 29%),
+          linear-gradient(132deg, transparent 0 58%, rgba(167, 116, 177, 0.09) 59%, transparent 72%),
+          linear-gradient(104deg, transparent 0 72%, rgba(200, 155, 79, 0.06) 73%, transparent 82%),
+          linear-gradient(146deg, transparent 0 34%, rgba(92, 47, 92, 0.055) 35%, transparent 44%),
           radial-gradient(circle at 14% 12%, rgba(211, 191, 226, 0.62), transparent 28rem),
           radial-gradient(circle at 86% 8%, rgba(236, 214, 246, 0.55), transparent 26rem),
           radial-gradient(circle at 52% 72%, rgba(255, 245, 252, 0.85), transparent 34rem),
@@ -73,7 +77,9 @@
 
       .marble {
         background:
-          radial-gradient(circle at 24% 18%, rgba(203,184,214,.26), transparent 15rem),
+          linear-gradient(122deg, transparent 0 22%, rgba(111,60,100,.075) 23%, transparent 34%),
+          linear-gradient(146deg, transparent 0 64%, rgba(203,184,214,.16) 65%, transparent 76%),
+          radial-gradient(circle at 24% 18%, rgba(203,184,214,.28), transparent 15rem),
           radial-gradient(circle at 82% 16%, rgba(236,214,246,.28), transparent 13rem),
           linear-gradient(135deg, rgba(255,255,255,.78), rgba(251,246,255,.72));
       }
@@ -99,10 +105,11 @@
       .circle-inner { display: flex; width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; border-radius: inherit; background: var(--navy); }
       .circle strong { color: var(--gold); font-size: 48px; font-weight: 950; }
       .progress-grid { grid-template-columns: repeat(2, 1fr); }
-      .progress-card { border: 1px solid rgba(200,155,79,.22); border-radius: 10px; background: rgba(255,255,255,.08); padding: 20px; }
+      .progress-section .lead { color: rgba(255,255,255,.82); max-width: 430px; }
+      .progress-card { border: 1px solid rgba(200,155,79,.3); border-radius: 10px; background: rgba(255,255,255,.12); padding: 20px; box-shadow: 0 14px 34px rgba(0,0,0,.16); }
       .progress-card h3 { color: white; font-size: 16px; }
-      .status { color: rgba(255,255,255,.58); font-size: 12px; font-weight: 900; text-transform: uppercase; }
-      .bar { height: 8px; margin-top: 16px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.14); }
+      .status { color: rgba(255,255,255,.78); font-size: 12px; font-weight: 900; text-transform: uppercase; }
+      .bar { height: 8px; margin-top: 16px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.24); }
       .bar span { display: block; height: 100%; border-radius: inherit; background: var(--success); }
       .price-card { position: relative; padding: 30px; }
       .price-card.featured { border-color: var(--gold); outline: 2px solid rgba(200,155,79,.28); }
