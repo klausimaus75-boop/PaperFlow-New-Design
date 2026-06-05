@@ -4,7 +4,6 @@ import { ArrowRight, Check, ChevronRight, Layers3, Sparkles } from "lucide-react
 import {
   CheckIcon,
   comparison,
-  courseBenefits,
   modules,
   pricingPlans,
   RocketIcon,
@@ -113,25 +112,26 @@ function OverviewSection() {
       <div className="botanical-ornament botanical-right" aria-hidden="true" />
       <div className="section-shell">
         <div className="max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Kurs-Überblick</p>
-          <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Dein Kursfahrplan in 6 Phasen</h2>
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Modulfahrplan</p>
+          <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Alle 20 Kursmodule in der richtigen Reihenfolge</h2>
           <p className="mt-5 text-lg leading-8 text-ink/70">
-            PaperFlow begleitet dich von der spielerischen Bot-Nutzung über Buchidee, Konzept, Prompts, Layout, Qualitätsprüfung und KDP-Veröffentlichung bis hin zu Keywords und Marketing.
+            PaperFlow führt dich Schritt für Schritt vom spielerischen Bot-Einstieg über Buchidee, Konzept, Prompts, Buchtypen, Cover, Layout und Qualitätsprüfung bis zur KDP-Veröffentlichung und Vermarktung.
           </p>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {courseBenefits.map(({ title, moduleRange, href, description, icon: Icon }) => (
-            <Link key={title} href={href} className="card group p-6 transition hover:-translate-y-1 hover:border-gold">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md border border-gold/35 bg-navy text-gold">
-                <Icon size={24} />
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {modules.map((module) => (
+            <Link key={module.slug} href={`/module/${module.slug}`} className="card group p-5 transition hover:-translate-y-1 hover:border-gold">
+              <div className="flex items-start justify-between gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-navy text-sm font-black text-gold">
+                  {String(module.number).padStart(2, "0")}
+                </span>
+                <module.icon className="text-success" size={22} />
               </div>
-              <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-goldDark">{moduleRange}</p>
-              <h3 className="text-xl font-black text-navy">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-ink/70">
-                {description}
-              </p>
+              <p className="mt-5 text-xs font-black uppercase tracking-[0.22em] text-goldDark">Modul {module.number}</p>
+              <h3 className="mt-2 text-xl font-black text-navy">{module.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-ink/70">{module.description}</p>
               <span className="mt-5 inline-flex items-center gap-1 text-xs font-black uppercase tracking-widest text-navy group-hover:text-goldDark">
-                Phase ansehen <ChevronRight size={14} />
+                {module.lessonCount} Lektionen <ChevronRight size={14} />
               </span>
             </Link>
           ))}

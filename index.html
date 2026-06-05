@@ -166,6 +166,12 @@
       .kicker { margin-bottom: 12px; color: var(--success); font-size: 14px; font-weight: 950; letter-spacing: .25em; text-transform: uppercase; }
       .grid { display: grid; gap: 20px; }
       .benefit-grid, .module-grid, .pricing-grid { grid-template-columns: repeat(3, 1fr); margin-top: 38px; }
+      .roadmap-grid { grid-template-columns: repeat(4, 1fr); margin-top: 38px; }
+      .roadmap-card { display: block; min-height: 190px; padding: 22px; transition: transform .18s ease, border-color .18s ease; }
+      .roadmap-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+      .roadmap-card strong { display: inline-flex; width: 42px; height: 42px; align-items: center; justify-content: center; border-radius: 8px; background: var(--navy); color: var(--gold); font-size: 14px; }
+      .roadmap-card .kicker { margin-top: 16px; margin-bottom: 6px; }
+      .roadmap-card p:last-child { margin-top: 10px; color: rgba(58,27,53,.72); font-size: 13px; line-height: 1.55; }
       .card { border: 1px solid rgba(200,155,79,.22); border-radius: 10px; background: rgba(255,255,255,.9); box-shadow: var(--shadow); backdrop-filter: blur(10px); }
       .soft-card { padding: 26px; transition: transform .18s ease, border-color .18s ease; }
       .soft-card:hover { border-color: var(--gold); transform: translateY(-4px); }
@@ -218,13 +224,13 @@
         .mobile-toggle { display: inline-flex; align-items: center; justify-content: center; }
         .hero, .progress-layout, .comparison, .footer-grid { grid-template-columns: 1fr; }
         .hero-decor { display: none; }
-        .benefit-grid, .module-grid, .pricing-grid, .progress-grid { grid-template-columns: repeat(2, 1fr); }
+        .benefit-grid, .module-grid, .pricing-grid, .progress-grid, .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
         .arrow-circle { display: none; }
       }
       @media (max-width: 640px) {
         .shell { width: min(100% - 24px, 1180px); }
         .hero { padding-top: 34px; padding-left: 12px; padding-right: 12px; }
-        .stats, .benefit-grid, .module-grid, .pricing-grid, .progress-grid { grid-template-columns: 1fr; }
+        .stats, .benefit-grid, .module-grid, .pricing-grid, .progress-grid, .roadmap-grid { grid-template-columns: 1fr; }
         .hero-actions { flex-direction: column; }
         .btn { width: 100%; }
         section { padding: 62px 0; }
@@ -289,17 +295,31 @@
       <section id="ueberblick" class="marble">
         <div class="shell">
           <div class="section-head">
-            <p class="kicker">Kurs-&Uuml;berblick</p>
-            <h2>Dein Kursfahrplan in 6 Phasen</h2>
-            <p class="lead">PaperFlow begleitet dich von der spielerischen Bot-Nutzung &uuml;ber Buchidee, Konzept, Prompts, Layout, Qualit&auml;tspr&uuml;fung und KDP-Ver&ouml;ffentlichung bis hin zu Keywords und Marketing.</p>
+            <p class="kicker">Modulfahrplan</p>
+            <h2>Alle 20 Kursmodule in der richtigen Reihenfolge</h2>
+            <p class="lead">PaperFlow f&uuml;hrt dich Schritt f&uuml;r Schritt vom spielerischen Bot-Einstieg &uuml;ber Buchidee, Konzept, Prompts, Buchtypen, Cover, Layout und Qualit&auml;tspr&uuml;fung bis zur KDP-Ver&ouml;ffentlichung und Vermarktung.</p>
           </div>
-          <div class="grid benefit-grid">
-            <a class="card soft-card" href="/module/spass-mit-dem-bot"><span class="icon">01</span><p class="kicker" style="margin-top:16px;margin-bottom:6px">Module 1-5</p><h3>Start & Buchfundament</h3><p>Bot-Einstieg, Buchideen, Zielgruppe, Marktanalyse und Buchkonzept als sauberes Fundament.</p></a>
-            <a class="card soft-card" href="/module/prompten-wie-ein-profi"><span class="icon">02</span><p class="kicker" style="margin-top:16px;margin-bottom:6px">Module 6-7</p><h3>Prompten & eigene GPTs</h3><p>Prompts klar bauen und eigene Buchassistenten f&uuml;r Stil, Pr&uuml;fung und Projektlogik planen.</p></a>
-            <a class="card soft-card" href="/module/malbuecher-erstellen"><span class="icon">03</span><p class="kicker" style="margin-top:16px;margin-bottom:6px">Module 8-12</p><h3>Buchtypen entwickeln</h3><p>Malb&uuml;cher, Kinderb&uuml;cher, R&auml;tsel, Escape-Room-B&uuml;cher, E-Books und Ratgeber entwickeln.</p></a>
-            <a class="card soft-card" href="/module/coverdesign-verstehen"><span class="icon">04</span><p class="kicker" style="margin-top:16px;margin-bottom:6px">Module 13-15</p><h3>Design, Bildstil & Text</h3><p>Coverwirkung, Illustrationsstil und KI-Texte professionell planen, pr&uuml;fen und verbessern.</p></a>
-            <a class="card soft-card" href="/module/buchlayout-mit-canva"><span class="icon">05</span><p class="kicker" style="margin-top:16px;margin-bottom:6px">Module 16-17</p><h3>Layout & Qualit&auml;tspr&uuml;fung</h3><p>Canva-Innenlayout, Druckdaten, Checklisten, Gegenprobe und Freigabeprozess absichern.</p></a>
-            <a class="card soft-card" href="/module/kdp-veroeffentlichung"><span class="icon">06</span><p class="kicker" style="margin-top:16px;margin-bottom:6px">Module 18-20</p><h3>KDP, Verkauf & Marketing</h3><p>KDP-Ver&ouml;ffentlichung, Keywords, Verkaufsseite und Marketing ohne Geldverbrennung.</p></a>
+          <div class="grid roadmap-grid">
+            <a class="card roadmap-card" href="/module/spass-mit-dem-bot"><strong>01</strong><p class="kicker">12 Lektionen</p><h3>Spa&szlig; mit dem Bot</h3><p>Spielerischer Einstieg in PaperFlow und erste greifbare Ergebnisse.</p></a>
+            <a class="card roadmap-card" href="/module/buchideen-finden"><strong>02</strong><p class="kicker">11 Lektionen</p><h3>Buchideen finden</h3><p>Von wilden Ideen zu tragf&auml;higen Buchkonzepten.</p></a>
+            <a class="card roadmap-card" href="/module/zielgruppe-buchversprechen"><strong>03</strong><p class="kicker">11 Lektionen</p><h3>Zielgruppe und Buchversprechen</h3><p>K&auml;ufer, Nutzen und ehrliches Buchversprechen kl&auml;ren.</p></a>
+            <a class="card roadmap-card" href="/module/markt-konkurrenz-analyse"><strong>04</strong><p class="kicker">12 Lektionen</p><h3>Markt und Konkurrenz analysieren</h3><p>Amazon, Bestseller, Bewertungen und Marktchancen lesen.</p></a>
+            <a class="card roadmap-card" href="/module/buchkonzept-entwickeln"><strong>05</strong><p class="kicker">12 Lektionen</p><h3>Buchkonzept entwickeln</h3><p>Format, Umfang, Struktur, Stil und Qualit&auml;tsregeln festlegen.</p></a>
+            <a class="card roadmap-card" href="/module/prompten-wie-ein-profi"><strong>06</strong><p class="kicker">12 Lektionen</p><h3>Prompten wie ein Profi</h3><p>Rollen, Aufgaben, Stil, Pr&uuml;fung und Promptketten sauber bauen.</p></a>
+            <a class="card roadmap-card" href="/module/eigene-gpts-fuer-buecher"><strong>07</strong><p class="kicker">12 Lektionen</p><h3>Eigene GPTs f&uuml;r B&uuml;cher</h3><p>Eigene Buchassistenten mit Stil- und Qualit&auml;tsregeln planen.</p></a>
+            <a class="card roadmap-card" href="/module/malbuecher-erstellen"><strong>08</strong><p class="kicker">12 Lektionen</p><h3>Malb&uuml;cher erstellen</h3><p>Motivlisten, Malvorlagen und druckbare Line-Art planen.</p></a>
+            <a class="card roadmap-card" href="/module/kinderbuecher-entwickeln"><strong>09</strong><p class="kicker">12 Lektionen</p><h3>Kinderb&uuml;cher entwickeln</h3><p>Figuren, Handlung, Humor und Seitenlogik entwickeln.</p></a>
+            <a class="card roadmap-card" href="/module/raetsel-mitmachbuecher"><strong>10</strong><p class="kicker">12 Lektionen</p><h3>R&auml;tsel und Mitmachb&uuml;cher</h3><p>Suchbilder, Labyrinthe, Aufgaben und L&ouml;sungsseiten bauen.</p></a>
+            <a class="card roadmap-card" href="/module/escape-room-buecher"><strong>11</strong><p class="kicker">12 Lektionen</p><h3>Escape-Room-B&uuml;cher</h3><p>Story, Codes, Hinweise und R&auml;tselketten logisch planen.</p></a>
+            <a class="card roadmap-card" href="/module/ebooks-und-ratgeber"><strong>12</strong><p class="kicker">12 Lektionen</p><h3>E-Books und Ratgeber</h3><p>Wissen strukturieren, Kapitel, Beispiele und Checklisten bauen.</p></a>
+            <a class="card roadmap-card" href="/module/coverdesign-verstehen"><strong>13</strong><p class="kicker">12 Lektionen</p><h3>Coverdesign verstehen</h3><p>Coverwirkung, Lesbarkeit, USP, Mockups und KDP-Beschnitt.</p></a>
+            <a class="card roadmap-card" href="/module/illustrationen-bildstil"><strong>14</strong><p class="kicker">12 Lektionen</p><h3>Illustrationen und Bildstil</h3><p>Stil, Farben, Figuren, Bildformate und Serienlook festlegen.</p></a>
+            <a class="card roadmap-card" href="/module/schreiben-mit-ki"><strong>15</strong><p class="kicker">12 Lektionen</p><h3>Schreiben mit KI</h3><p>Texte erstellen, f&uuml;hren, pr&uuml;fen und menschlicher machen.</p></a>
+            <a class="card roadmap-card" href="/module/buchlayout-mit-canva"><strong>16</strong><p class="kicker">12 Lektionen</p><h3>Buchlayout mit Canva</h3><p>Beschnitt, R&auml;nder, Raster, Schriften und PDF-Export.</p></a>
+            <a class="card roadmap-card" href="/module/qualitaetspruefung-gegenprobe"><strong>17</strong><p class="kicker">12 Lektionen</p><h3>Qualit&auml;tspr&uuml;fung und Gegenprobe</h3><p>Inhalt, Logik, Bilder, Cover, KDP und Plagiatsrisiko pr&uuml;fen.</p></a>
+            <a class="card roadmap-card" href="/module/kdp-veroeffentlichung"><strong>18</strong><p class="kicker">12 Lektionen</p><h3>KDP Ver&ouml;ffentlichung</h3><p>Buchdetails, Kategorien, Keywords, Cover, Vorschau und Launch.</p></a>
+            <a class="card roadmap-card" href="/module/keywords-verkaufsseite"><strong>19</strong><p class="kicker">12 Lektionen</p><h3>Keywords und Verkaufsseite</h3><p>Titel, Beschreibung, Suchbegriffe, Kategorien und Verkaufsargumente.</p></a>
+            <a class="card roadmap-card" href="/module/marketing-ohne-geldverbrennung"><strong>20</strong><p class="kicker">12 Lektionen</p><h3>Marketing ohne Geldverbrennung</h3><p>Pinterest, TikTok, Instagram, Mockups, Hooks und Contentplan.</p></a>
           </div>
         </div>
       </section>
