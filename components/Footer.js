@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="bg-navy text-white">
       <div className="section-shell grid gap-10 py-14 md:grid-cols-[1.3fr_0.7fr_0.8fr_1fr]">
         <div>
-          <div className="mb-4 text-2xl font-black text-gold">PaperFlow</div>
+          <div className="mb-4 font-serif text-3xl font-black tracking-wide text-gold">PaperFlow</div>
           <p className="max-w-sm text-sm leading-7 text-white/72">
             Der deutsche Onlinekurs fuer Einsteiger, die Selfpublishing auf Amazon KDP strukturiert lernen und ihr erstes Buchprojekt starten wollen.
           </p>
