@@ -29,7 +29,12 @@ export default function HomePage() {
 function HeroSection() {
   return (
     <section className="luxury-dark relative min-h-[calc(100vh-5rem)]">
-      <div className="silk-scarf" aria-hidden="true" />
+      <div className="luxury-band" aria-hidden="true" />
+      <div className="silk-scarf silk-scarf-hero" aria-hidden="true" />
+      <div className="silk-fold silk-fold-hero" aria-hidden="true" />
+      <div className="gold-orbit gold-orbit-hero" aria-hidden="true" />
+      <div className="stage-glow stage-glow-hero" aria-hidden="true" />
+      <div className="dust dust-right" aria-hidden="true" />
       <div className="section-shell relative grid items-center gap-12 py-16 lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[0.95fr_1.05fr] lg:py-20">
       <div className="pointer-events-none absolute left-0 top-16 hidden h-72 w-20 opacity-70 lg:block" aria-hidden="true">
         <div className="h-full w-px bg-gradient-to-b from-gold via-bloom to-transparent" />
@@ -73,7 +78,7 @@ function HeroSection() {
         </div>
       </div>
       <div className="relative">
-        <div className="absolute -bottom-8 left-10 right-10 h-20 rounded-[100%] border border-gold/30 bg-charcoal shadow-glow" aria-hidden="true" />
+        <div className="marble-plinth marble-plinth-hero" aria-hidden="true" />
         <div className="relative overflow-hidden rounded-lg border border-gold/35 bg-paper p-3 shadow-soft">
           <div className="mb-3 flex items-center justify-between border-b border-gold/20 pb-3 text-[11px] font-black uppercase tracking-[0.28em] text-goldDark">
             <span>01 PaperFlow</span>
@@ -97,6 +102,8 @@ function HeroSection() {
 function OverviewSection() {
   return (
     <section id="ueberblick" className="marble-panel py-20">
+      <div className="silk-scarf silk-scarf-soft" aria-hidden="true" />
+      <div className="botanical-ornament botanical-right" aria-hidden="true" />
       <div className="section-shell">
         <div className="max-w-3xl">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Kurs-Überblick</p>
@@ -130,6 +137,8 @@ function OverviewSection() {
 function ModulesSection() {
   return (
     <section id="module" className="marble-panel py-20">
+      <div className="botanical-ornament botanical-left" aria-hidden="true" />
+      <div className="gold-orbit gold-orbit-small" aria-hidden="true" />
       <div className="section-shell">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
@@ -168,6 +177,9 @@ function ModulesSection() {
 function ProgressSection() {
   return (
     <section id="fortschritt" className="luxury-dark py-20 text-white">
+      <div className="section-split" aria-hidden="true" />
+      <div className="silk-scarf silk-scarf-left" aria-hidden="true" />
+      <div className="dust dust-right" aria-hidden="true" />
       <div className="section-shell relative grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">Dein Fortschritt</p>
@@ -211,6 +223,8 @@ function ProgressSection() {
 function PricingSection() {
   return (
     <section id="preise" className="marble-panel py-20">
+      <div className="botanical-ornament botanical-right" aria-hidden="true" />
+      <div className="silk-scarf silk-scarf-soft" aria-hidden="true" />
       <div className="section-shell">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Preise</p>
@@ -245,6 +259,8 @@ function PricingSection() {
 function ComparisonSection() {
   return (
     <section id="vergleich" className="luxury-dark py-20">
+      <div className="section-split" aria-hidden="true" />
+      <div className="silk-scarf silk-scarf-hero" aria-hidden="true" />
       <div className="section-shell">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Vorher und Nachher</p>

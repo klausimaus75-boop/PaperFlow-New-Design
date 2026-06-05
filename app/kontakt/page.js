@@ -6,8 +6,10 @@ export const metadata = {
 
 export default function KontaktPage() {
   return (
-    <section className="section-shell py-16">
-      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+    <section className="marble-panel min-h-screen py-16">
+      <div className="silk-scarf silk-scarf-soft" aria-hidden="true" />
+      <div className="botanical-ornament botanical-right" aria-hidden="true" />
+      <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Kontakt</p>
           <h1 className="mt-3 text-4xl font-black text-navy sm:text-5xl">Fragen zu PaperFlow?</h1>

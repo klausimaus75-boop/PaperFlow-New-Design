@@ -4,7 +4,10 @@ export const metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <section className="section-shell py-16">
+    <section className="marble-panel min-h-screen py-16">
+      <div className="silk-scarf silk-scarf-soft" aria-hidden="true" />
+      <div className="botanical-ornament botanical-right" aria-hidden="true" />
+      <div className="section-shell">
       <div className="card max-w-4xl p-8">
         <h1 className="text-4xl font-black text-navy">Datenschutz</h1>
         <p className="mt-6 text-sm leading-7 text-ink/75">
@@ -18,6 +21,7 @@ export default function DatenschutzPage() {
             </p>
           </section>
         ))}
+      </div>
       </div>
     </section>
   );

@@ -25,7 +25,11 @@ export default async function ModuleDetailPage({ params }) {
 
   return (
     <section className="luxury-dark min-h-screen py-14 lg:py-20">
-      <div className="silk-scarf" aria-hidden="true" />
+      <div className="luxury-band" aria-hidden="true" />
+      <div className="silk-scarf silk-scarf-hero" aria-hidden="true" />
+      <div className="silk-fold silk-fold-hero" aria-hidden="true" />
+      <div className="gold-orbit gold-orbit-hero" aria-hidden="true" />
+      <div className="dust dust-right" aria-hidden="true" />
       <div className="section-shell relative">
       <Link href="/#module" className="outline-button mb-8">
         <ArrowLeft size={18} /> Zurück zur Übersicht

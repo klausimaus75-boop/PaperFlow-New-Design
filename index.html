@@ -56,8 +56,41 @@
       .btn-navy { background: var(--navy); color: white; box-shadow: var(--shadow); }
       .btn-outline { border: 1px solid rgba(200,155,79,.35); background: rgba(255,255,255,.78); color: var(--navy); }
 
-      section { padding: 82px 0; }
+      section { position: relative; overflow: hidden; padding: 82px 0; }
       .hero { min-height: calc(100vh - 80px); display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 48px; padding: 48px 0 64px; }
+      .hero::before {
+        position: absolute;
+        right: -10rem;
+        top: 48%;
+        width: min(68vw, 54rem);
+        height: 17rem;
+        border-radius: 999px;
+        background:
+          linear-gradient(120deg, rgba(255,255,255,0), rgba(203,198,190,.9) 28%, rgba(100,104,111,.58) 48%, rgba(238,230,218,.32) 67%, rgba(8,17,29,0) 88%),
+          repeating-linear-gradient(106deg, rgba(255,255,255,.22) 0 2px, rgba(0,0,0,.06) 2px 10px);
+        box-shadow: 0 34px 90px rgba(0,0,0,.35);
+        content: "";
+        opacity: .9;
+        transform: rotate(-9deg);
+      }
+      .hero::after {
+        position: absolute;
+        right: -3rem;
+        bottom: 3.8rem;
+        width: min(32vw, 26rem);
+        height: 10rem;
+        border-radius: 58% 42% 64% 36% / 45% 49% 51% 55%;
+        background:
+          radial-gradient(ellipse at 18% 42%, rgba(255,255,255,.42), transparent 18%),
+          radial-gradient(ellipse at 44% 56%, rgba(16,20,26,.34), transparent 24%),
+          repeating-linear-gradient(102deg, rgba(255,255,255,.18) 0 1px, rgba(32,35,41,.11) 1px 9px),
+          linear-gradient(110deg, rgba(228,224,217,.86), rgba(98,103,111,.78) 48%, rgba(235,225,212,.54));
+        content: "";
+        filter: drop-shadow(0 26px 42px rgba(0,0,0,.38));
+        opacity: .9;
+        transform: rotate(-15deg);
+      }
+      .hero > *, section > .shell { position: relative; z-index: 1; }
       .eyebrow { display: inline-flex; border: 1px solid rgba(200,155,79,.4); border-radius: 8px; background: rgba(255,255,255,.72); padding: 9px 12px; color: var(--navy); font-size: 14px; font-weight: 900; }
       h1 { margin-top: 20px; font-size: clamp(40px, 6vw, 68px); line-height: 1.05; font-weight: 950; }
       h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.12; font-weight: 950; }
@@ -74,11 +107,20 @@
 
       .marble {
         background:
-          linear-gradient(122deg, transparent 0 22%, rgba(111,60,100,.075) 23%, transparent 34%),
-          linear-gradient(146deg, transparent 0 64%, rgba(203,184,214,.16) 65%, transparent 76%),
-          radial-gradient(circle at 24% 18%, rgba(203,184,214,.28), transparent 15rem),
-          radial-gradient(circle at 82% 16%, rgba(236,214,246,.28), transparent 13rem),
-          linear-gradient(135deg, rgba(255,255,255,.78), rgba(251,246,255,.72));
+          radial-gradient(circle at 18% 8%, rgba(215,170,99,.1), transparent 18rem),
+          radial-gradient(circle at 86% 18%, rgba(178,172,164,.28), transparent 22rem),
+          linear-gradient(122deg, rgba(98,83,91,.06) 0 1px, transparent 1px 36%),
+          linear-gradient(135deg, #fff9f0, #f2e7d7);
+      }
+      .marble::before {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(112deg, transparent 0 28%, rgba(215,170,99,.16) 29%, transparent 30%),
+          linear-gradient(128deg, transparent 0 72%, rgba(216,183,181,.22) 73%, transparent 78%),
+          repeating-linear-gradient(150deg, rgba(17,24,39,.035) 0 1px, transparent 1px 46px);
+        content: "";
+        pointer-events: none;
       }
       .section-head { max-width: 760px; }
       .section-head.center { margin: 0 auto; text-align: center; }
@@ -95,7 +137,13 @@
       .badge { display: inline-flex; border-radius: 8px; background: rgba(200,155,79,.18); padding: 8px 12px; color: var(--gold-dark); font-size: 12px; font-weight: 950; }
       .module-card p { flex: 1; margin-top: 14px; }
       .module-bottom { margin-top: 18px; border-top: 1px solid rgba(200,155,79,.22); padding-top: 16px; color: rgba(58,27,53,.56); font-size: 14px; font-weight: 800; }
-      .progress-section { background: var(--navy); color: white; }
+      .progress-section {
+        background:
+          radial-gradient(circle at 70% 25%, rgba(216,183,181,.18), transparent 24rem),
+          linear-gradient(118deg, transparent 0 62%, rgba(215,170,99,.1) 63%, transparent 65%),
+          linear-gradient(180deg, #08111d 0%, #101b29 100%);
+        color: white;
+      }
       .progress-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 42px; }
       .progress-section h2 { color: white; }
       .circle { display: flex; width: 176px; height: 176px; align-items: center; justify-content: center; border-radius: 999px; background: conic-gradient(var(--gold) 0 29%, rgba(255,255,255,.15) 29% 100%); padding: 12px; margin-top: 28px; }

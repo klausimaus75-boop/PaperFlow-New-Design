@@ -15,45 +15,7 @@ body {
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 78% 18%, rgba(216, 183, 181, 0.18), transparent 28rem),
-    radial-gradient(circle at 16% 8%, rgba(215, 170, 99, 0.08), transparent 25rem),
-    linear-gradient(118deg, transparent 0 58%, rgba(215, 170, 99, 0.09) 59%, transparent 61%),
-    linear-gradient(132deg, transparent 0 68%, rgba(216, 183, 181, 0.12) 69%, transparent 75%),
-    linear-gradient(180deg, #08111d 0%, #101b29 42%, #f5ecdf 42%, #fff8ee 100%);
-}
-
-body::before,
-body::after {
-  position: fixed;
-  inset: auto;
-  z-index: -1;
-  pointer-events: none;
-  content: "";
-}
-
-body::before {
-  right: -8rem;
-  top: 8rem;
-  width: 42rem;
-  height: 22rem;
-  border-radius: 999px;
-  background:
-    linear-gradient(130deg, rgba(255, 248, 238, 0.0), rgba(216, 183, 181, 0.42), rgba(215, 170, 99, 0.1), rgba(8, 17, 29, 0.0));
-  filter: blur(18px);
-  transform: rotate(-16deg);
-  opacity: 0.78;
-}
-
-body::after {
-  left: -7rem;
-  bottom: 12rem;
-  width: 30rem;
-  height: 30rem;
-  background:
-    radial-gradient(circle, rgba(215, 170, 99, 0.09), transparent 62%),
-    repeating-linear-gradient(112deg, rgba(215, 170, 99, 0.13) 0 1px, transparent 1px 30px);
-  opacity: 0.55;
+  background: #08111d;
 }
 
 h1,
@@ -72,6 +34,8 @@ textarea {
 
 .section-shell {
   @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  position: relative;
+  z-index: 1;
 }
 
 .gold-button {
@@ -87,6 +51,8 @@ textarea {
 }
 
 .card {
+  position: relative;
+  z-index: 1;
   @apply rounded-lg border border-gold/20 shadow-soft backdrop-blur;
   background-color: rgba(255, 248, 238, 0.92);
 }
@@ -99,9 +65,10 @@ textarea {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 18% 8%, rgba(215, 170, 99, 0.08), transparent 18rem),
-    radial-gradient(circle at 92% 16%, rgba(216, 183, 181, 0.18), transparent 20rem),
-    linear-gradient(135deg, #fff8ee 0%, #f5ecdf 100%);
+    radial-gradient(circle at 18% 8%, rgba(215, 170, 99, 0.1), transparent 18rem),
+    radial-gradient(circle at 86% 18%, rgba(178, 172, 164, 0.28), transparent 22rem),
+    linear-gradient(122deg, rgba(98, 83, 91, 0.06) 0 1px, transparent 1px 36%),
+    linear-gradient(135deg, #fff9f0 0%, #f2e7d7 100%);
 }
 
 .marble-panel::before {
@@ -151,14 +118,257 @@ textarea {
 
 .silk-scarf {
   position: absolute;
-  right: -8rem;
-  bottom: -5rem;
-  width: min(44vw, 34rem);
-  height: 14rem;
+  right: -12rem;
+  bottom: -3rem;
+  width: min(58vw, 48rem);
+  height: 18rem;
   border-radius: 999px;
   background:
-    linear-gradient(125deg, rgba(255, 248, 238, 0), rgba(216, 183, 181, 0.72), rgba(245, 236, 223, 0.35), rgba(8, 17, 29, 0));
-  filter: blur(9px);
-  opacity: 0.86;
-  transform: rotate(-10deg);
+    linear-gradient(120deg, rgba(255, 255, 255, 0), rgba(203, 198, 190, 0.9) 28%, rgba(100, 104, 111, 0.58) 48%, rgba(238, 230, 218, 0.32) 67%, rgba(8, 17, 29, 0) 88%),
+    repeating-linear-gradient(106deg, rgba(255, 255, 255, 0.22) 0 2px, rgba(0, 0, 0, 0.06) 2px 10px);
+  filter: blur(3px);
+  opacity: 0.95;
+  transform: rotate(-9deg);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.35);
+}
+
+.silk-scarf::before,
+.silk-scarf::after {
+  position: absolute;
+  inset: 22% 4%;
+  border-radius: inherit;
+  content: "";
+}
+
+.silk-scarf::before {
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transform: translateY(-2.5rem) rotate(3deg);
+}
+
+.silk-scarf::after {
+  background: linear-gradient(110deg, transparent 0 18%, rgba(8, 17, 29, 0.28) 30%, transparent 45%, rgba(255, 255, 255, 0.2) 57%, transparent 73%);
+  filter: blur(8px);
+}
+
+.silk-scarf-hero {
+  top: 46%;
+  bottom: auto;
+  right: -10rem;
+  z-index: 0;
+  width: min(68vw, 54rem);
+  height: 17rem;
+  opacity: 0.9;
+}
+
+.silk-scarf-left {
+  left: -13rem;
+  right: auto;
+  bottom: auto;
+  top: 7rem;
+  width: min(42vw, 34rem);
+  height: 12rem;
+  opacity: 0.68;
+  transform: rotate(17deg);
+}
+
+.silk-scarf-soft {
+  right: -14rem;
+  top: 2rem;
+  bottom: auto;
+  height: 13rem;
+  opacity: 0.52;
+  transform: rotate(-18deg);
+}
+
+.silk-fold {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 58% 42% 64% 36% / 45% 49% 51% 55%;
+  background:
+    radial-gradient(ellipse at 18% 42%, rgba(255, 255, 255, 0.42), transparent 18%),
+    radial-gradient(ellipse at 44% 56%, rgba(16, 20, 26, 0.34), transparent 24%),
+    radial-gradient(ellipse at 70% 38%, rgba(255, 255, 255, 0.28), transparent 18%),
+    repeating-linear-gradient(102deg, rgba(255, 255, 255, 0.18) 0 1px, rgba(32, 35, 41, 0.11) 1px 9px),
+    linear-gradient(110deg, rgba(228, 224, 217, 0.86), rgba(98, 103, 111, 0.78) 48%, rgba(235, 225, 212, 0.54));
+  filter: drop-shadow(0 26px 42px rgba(0, 0, 0, 0.38));
+  opacity: 0.9;
+}
+
+.silk-fold-hero {
+  right: -3rem;
+  bottom: 3.8rem;
+  z-index: 0;
+  width: min(32vw, 26rem);
+  height: 10rem;
+  transform: rotate(-15deg);
+}
+
+.gold-orbit {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgba(215, 170, 99, 0.42);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 999px;
+}
+
+.gold-orbit-hero {
+  right: -5rem;
+  top: 8rem;
+  width: 28rem;
+  height: 28rem;
+  transform: rotate(-28deg);
+}
+
+.gold-orbit-small {
+  left: 6%;
+  bottom: 8%;
+  width: 9rem;
+  height: 9rem;
+  opacity: 0.45;
+  transform: rotate(18deg);
+}
+
+.stage-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(215, 170, 99, 0.28), transparent 66%);
+  filter: blur(10px);
+}
+
+.stage-glow-hero {
+  right: 12%;
+  bottom: 5%;
+  width: 34rem;
+  height: 10rem;
+}
+
+.botanical-ornament {
+  position: absolute;
+  pointer-events: none;
+  width: 13rem;
+  height: 20rem;
+  opacity: 0.32;
+}
+
+.botanical-ornament::before,
+.botanical-ornament::after {
+  position: absolute;
+  content: "";
+}
+
+.botanical-ornament::before {
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(#a97837, transparent);
+  transform: rotate(10deg);
+}
+
+.botanical-ornament::after {
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 48% 18%, transparent 0 44%, rgba(169, 120, 55, 0.75) 45% 47%, transparent 48%),
+    radial-gradient(ellipse at 62% 34%, transparent 0 43%, rgba(169, 120, 55, 0.65) 44% 47%, transparent 48%),
+    radial-gradient(ellipse at 38% 50%, transparent 0 43%, rgba(169, 120, 55, 0.65) 44% 47%, transparent 48%),
+    radial-gradient(ellipse at 61% 66%, transparent 0 43%, rgba(169, 120, 55, 0.6) 44% 47%, transparent 48%);
+}
+
+.botanical-right {
+  right: 1.5rem;
+  bottom: 2rem;
+  transform: rotate(-9deg);
+}
+
+.botanical-left {
+  left: 1rem;
+  bottom: 3rem;
+  transform: scaleX(-1) rotate(-7deg);
+}
+
+.marble-plinth {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgba(215, 170, 99, 0.35);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 248, 238, 0.16), rgba(8, 17, 29, 0.4)),
+    repeating-linear-gradient(15deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 22px),
+    #15171a;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.marble-plinth-hero {
+  right: 4%;
+  bottom: 0.5rem;
+  width: min(46vw, 42rem);
+  height: 8rem;
+}
+
+.luxury-band {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(215, 170, 99, 0.12), transparent 22%, transparent 78%, rgba(215, 170, 99, 0.1)),
+    radial-gradient(circle at 83% 18%, rgba(255, 248, 238, 0.09), transparent 18rem);
+}
+
+.dust {
+  position: absolute;
+  pointer-events: none;
+  width: 18rem;
+  height: 18rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(215, 170, 99, 0.65) 0 2px, transparent 3px),
+    radial-gradient(circle at 52% 34%, rgba(215, 170, 99, 0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 76% 17%, rgba(215, 170, 99, 0.5) 0 2px, transparent 3px),
+    radial-gradient(circle at 64% 72%, rgba(215, 170, 99, 0.58) 0 1px, transparent 2px),
+    radial-gradient(circle at 32% 80%, rgba(215, 170, 99, 0.45) 0 1px, transparent 2px);
+  opacity: 0.5;
+}
+
+.dust-right {
+  right: 4rem;
+  top: 4rem;
+}
+
+.section-split {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-top: 1px solid rgba(215, 170, 99, 0.35);
+  border-bottom: 1px solid rgba(215, 170, 99, 0.22);
+}
+
+@media (max-width: 768px) {
+  .silk-scarf {
+    right: -18rem;
+    width: 42rem;
+    height: 12rem;
+    opacity: 0.76;
+  }
+
+  .silk-scarf-hero {
+    top: 48%;
+    right: -20rem;
+    height: 13rem;
+  }
+
+  .silk-fold-hero {
+    right: -9rem;
+    bottom: 9rem;
+    width: 24rem;
+    height: 8rem;
+    opacity: 0.72;
+  }
+
+  .silk-scarf-left,
+  .botanical-ornament,
+  .gold-orbit {
+    display: none;
+  }
 }
