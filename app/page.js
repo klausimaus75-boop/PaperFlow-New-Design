@@ -26,6 +26,29 @@ export default function HomePage() {
   );
 }
 
+const moduleTeasers = [
+  "Du bekommst ein Gefühl dafür, wie der PaperFlow-Bot Ideen, Coverimpulse und erste Buchseiten anstößt.",
+  "Ein erster Blick darauf, wie aus vagen Gedanken tragfähige Buchideen werden.",
+  "Du siehst, warum Zielgruppe und Buchversprechen später über Titel, Cover und Verkauf entscheiden.",
+  "Ein kurzer Einblick, wie Markt, Bewertungen und Konkurrenz richtig gelesen werden.",
+  "Du erfährst, welche Bausteine ein belastbares Buchkonzept braucht.",
+  "Ein Vorgeschmack auf Prompt-Struktur, Rollen, Stil und klare Anweisungen.",
+  "Du siehst, wie ein eigener Buchassistent grundsätzlich gedacht und vorbereitet wird.",
+  "Ein Einblick in Motivplanung, Stilrichtung und druckbare Malbuchseiten.",
+  "Du bekommst ein Gefühl für Figuren, Handlung und kindgerechte Seitenlogik.",
+  "Ein kurzer Blick auf Aufgabenarten, Schwierigkeitsgrad und Lösungslogik.",
+  "Du siehst, wie Story, Codes und Rätselketten sauber zusammenspielen.",
+  "Ein Einblick in Kapitelstruktur, Beispiele, Übungen und hilfreiche Checklisten.",
+  "Du erkennst, welche Coverfaktoren Käuferinteresse und Vertrauen beeinflussen.",
+  "Ein Vorgeschmack auf konsistente Bildstile, Figuren und Serienwirkung.",
+  "Du siehst, wie KI-Texte geführt, geprüft und menschlicher gemacht werden.",
+  "Ein Einblick in Beschnitt, Raster, Schriften und druckfähige Canva-Layouts.",
+  "Du bekommst einen Eindruck, welche Prüfungen vor Veröffentlichung wichtig sind.",
+  "Ein kurzer Blick auf Upload, Buchdetails, Kategorien, Vorschau und Launch.",
+  "Du siehst, welche Elemente eine Verkaufsseite auffindbar und überzeugend machen.",
+  "Ein Einblick in Contentideen, Mockups, Hooks und Marketing ohne Geldverbrennung."
+];
+
 function HeroSection() {
   return (
     <section className="hero-luxury luxury-dark relative min-h-[calc(100vh-5rem)]">
@@ -134,14 +157,14 @@ function ModulesSection() {
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Module</p>
-            <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Alle 20 Module im Überblick</h2>
+            <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Ein kurzer Blick in die 20 Module</h2>
           </div>
           <p className="max-w-xl text-sm leading-6 text-ink/70">
-            Jede Modulkarte zeigt Nummer, Titel, Kurzbeschreibung, Lektionsanzahl und führt zur Detailseite mit Ergebnis und Unterlektionen.
+            Du siehst hier nur die Richtung jedes Moduls. Die vollständigen Lektionen, Vorlagen, Prompts und Schritt-für-Schritt-Anleitungen bekommst du im Kurs.
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {modules.map((module) => (
+          {modules.map((module, index) => (
             <Link key={module.slug} href={`/module/${module.slug}`} className="card group flex min-h-64 flex-col p-6 transition hover:-translate-y-1 hover:border-gold">
               <div className="flex items-start justify-between gap-4">
                 <span className="rounded-md bg-gold/20 px-3 py-2 text-xs font-black text-goldDark">
@@ -150,11 +173,11 @@ function ModulesSection() {
                 <module.icon className="text-success" size={24} />
               </div>
               <h3 className="mt-6 text-2xl font-black text-navy">{module.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-6 text-ink/70">{module.description}</p>
+              <p className="mt-3 flex-1 text-sm leading-6 text-ink/70">{moduleTeasers[index]}</p>
               <div className="mt-5 flex items-center justify-between border-t border-gold/20 pt-4">
-                <span className="text-sm font-bold text-ink/60">{module.lessonCount} Lektionen</span>
+                <span className="text-sm font-bold text-ink/60">Kurs-Einblick</span>
                 <span className="inline-flex items-center gap-1 text-sm font-black text-navy group-hover:text-goldDark">
-                  Modul ansehen <ChevronRight size={16} />
+                  Einblick ansehen <ChevronRight size={16} />
                 </span>
               </div>
             </Link>

@@ -22,6 +22,8 @@ export default async function ModuleDetailPage({ params }) {
   const { slug } = await params;
   const module = modules.find((item) => item.slug === slug);
   if (!module) notFound();
+  const previewLessons = module.lessons.slice(0, 3);
+  const lockedLessonCount = Math.max(module.lessonCount - previewLessons.length, 0);
 
   return (
     <section className="luxury-dark min-h-screen py-14 lg:py-20">
@@ -80,10 +82,10 @@ export default async function ModuleDetailPage({ params }) {
           <div className="p-7">
             <div className="flex items-center gap-3">
               <ListChecks className="text-success" size={22} />
-              <h3 className="text-xl font-black text-navy">Unterlektionen</h3>
+              <h3 className="text-xl font-black text-navy">Einblick in die Lektionen</h3>
             </div>
             <ol className="mt-5 grid gap-3 sm:grid-cols-2">
-              {module.lessons.map((lesson, index) => (
+              {previewLessons.map((lesson, index) => (
                 <li key={lesson} className="flex gap-3 rounded-md border border-gold/15 bg-white/70 p-3 text-sm leading-6 text-ink/75">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-black text-goldDark">
                     {index + 1}
@@ -91,6 +93,14 @@ export default async function ModuleDetailPage({ params }) {
                   <span>{lesson}</span>
                 </li>
               ))}
+              <li className="flex gap-3 rounded-md border border-gold/25 bg-gold/10 p-3 text-sm leading-6 text-ink/75">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-xs font-black text-gold">
+                  +
+                </span>
+                <span>
+                  Weitere {lockedLessonCount} Lektionen, Vorlagen, Prompts und konkrete Schritt-für-Schritt-Anleitungen sind im Kurs enthalten.
+                </span>
+              </li>
             </ol>
             <div className="mt-7 rounded-lg border border-gold/20 bg-paper/70 p-5">
               <h3 className="text-lg font-black text-navy">Vorteile dieses Moduls</h3>
