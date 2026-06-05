@@ -4,19 +4,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: "#24101f",
-        ink: "#3a1b35",
-        cream: "#f7efe8",
-        paper: "#fff9f3",
-        gold: "#c89b4f",
-        goldDark: "#94692c",
-        success: "#8d8f68",
-        lavender: "#cbb8d6",
-        bloom: "#6f3c64"
+        navy: "#08111d",
+        ink: "#111827",
+        cream: "#f5ecdf",
+        paper: "#fff8ee",
+        gold: "#d7aa63",
+        goldDark: "#a97837",
+        success: "#b7c097",
+        lavender: "#d8b7b5",
+        bloom: "#c88f86",
+        charcoal: "#15171a"
       },
       boxShadow: {
-        soft: "0 18px 55px rgba(36, 16, 31, 0.11)",
-        glow: "0 18px 35px rgba(200, 155, 79, 0.26)"
+        soft: "0 22px 70px rgba(8, 17, 29, 0.16)",
+        glow: "0 18px 35px rgba(215, 170, 99, 0.28)"
       }
     }
   },

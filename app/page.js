@@ -28,10 +28,12 @@ export default function HomePage() {
 
 function HeroSection() {
   return (
-    <section className="section-shell relative grid min-h-[calc(100vh-7.25rem)] items-center gap-12 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:py-16">
+    <section className="luxury-dark relative min-h-[calc(100vh-5rem)]">
+      <div className="silk-scarf" aria-hidden="true" />
+      <div className="section-shell relative grid items-center gap-12 py-16 lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[0.95fr_1.05fr] lg:py-20">
       <div className="pointer-events-none absolute left-0 top-16 hidden h-72 w-20 opacity-70 lg:block" aria-hidden="true">
         <div className="h-full w-px bg-gradient-to-b from-gold via-bloom to-transparent" />
-        <div className="ml-3 mt-4 grid gap-3 text-bloom/55">
+        <div className="ml-3 mt-4 grid gap-3 text-gold/60">
           <span>*</span>
           <span>/</span>
           <span>*</span>
@@ -39,14 +41,14 @@ function HeroSection() {
         </div>
       </div>
       <div className="botanical-line">
-        <div className="mb-5 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-white/70 px-3 py-2 text-sm font-bold text-navy">
+        <div className="mb-5 inline-flex items-center gap-2 rounded-md border border-gold/45 bg-white/5 px-3 py-2 text-sm font-bold uppercase tracking-[0.28em] text-gold">
           <Sparkles size={16} className="text-goldDark" />
-          PaperFlow Akademie - 20 Kursmodule
+          Luxus Selfpublishing Academy
         </div>
-        <h1 className="max-w-3xl text-4xl font-black leading-tight text-navy sm:text-5xl lg:text-7xl">
+        <h1 className="max-w-3xl text-4xl font-black leading-tight text-paper sm:text-5xl lg:text-7xl">
           Dein einfacher Weg zum Selfpublishing-Erfolg auf Amazon KDP
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/75">
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80">
           Lerne Schritt für Schritt, wie du profitable Bücher erstellst, veröffentlichst und bewirbst, auch ohne Vorkenntnisse.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -63,16 +65,16 @@ function HeroSection() {
             [String(totalLessonCount), "Lektionen"],
             ["100%", "Einsteigerfokus"]
           ].map(([value, label]) => (
-            <div key={label} className="rounded-lg border border-gold/25 bg-white/70 p-4">
-              <div className="text-2xl font-black text-navy">{value}</div>
-              <div className="mt-1 text-xs font-bold uppercase tracking-widest text-ink/55">{label}</div>
+            <div key={label} className="rounded-lg border border-gold/20 bg-white/5 p-4 backdrop-blur">
+              <div className="text-2xl font-black text-paper">{value}</div>
+              <div className="mt-1 text-xs font-bold uppercase tracking-widest text-gold/80">{label}</div>
             </div>
           ))}
         </div>
       </div>
       <div className="relative">
-        <div className="absolute -inset-4 rounded-lg bg-bloom/15 blur-3xl" aria-hidden="true" />
-        <div className="relative overflow-hidden rounded-lg border border-gold/30 bg-white p-3 shadow-soft">
+        <div className="absolute -bottom-8 left-10 right-10 h-20 rounded-[100%] border border-gold/30 bg-charcoal shadow-glow" aria-hidden="true" />
+        <div className="relative overflow-hidden rounded-lg border border-gold/35 bg-paper p-3 shadow-soft">
           <div className="mb-3 flex items-center justify-between border-b border-gold/20 pb-3 text-[11px] font-black uppercase tracking-[0.28em] text-goldDark">
             <span>01 PaperFlow</span>
             <span>Masterclass</span>
@@ -87,6 +89,7 @@ function HeroSection() {
           />
         </div>
       </div>
+      </div>
     </section>
   );
 }
@@ -98,7 +101,7 @@ function OverviewSection() {
         <div className="max-w-3xl">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Kurs-Überblick</p>
           <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Dein Kursfahrplan in 6 Phasen</h2>
-          <p className="mt-5 text-lg leading-8 text-ink/75">
+          <p className="mt-5 text-lg leading-8 text-ink/70">
             PaperFlow begleitet dich von der spielerischen Bot-Nutzung über Buchidee, Konzept, Prompts, Layout, Qualitätsprüfung und KDP-Veröffentlichung bis hin zu Keywords und Marketing.
           </p>
         </div>
@@ -110,7 +113,7 @@ function OverviewSection() {
               </div>
               <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-goldDark">{moduleRange}</p>
               <h3 className="text-xl font-black text-navy">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-ink/65">
+              <p className="mt-3 text-sm leading-6 text-ink/70">
                 {description}
               </p>
               <span className="mt-5 inline-flex items-center gap-1 text-xs font-black uppercase tracking-widest text-navy group-hover:text-goldDark">
@@ -126,14 +129,14 @@ function OverviewSection() {
 
 function ModulesSection() {
   return (
-    <section id="module" className="py-20">
+    <section id="module" className="marble-panel py-20">
       <div className="section-shell">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Module</p>
             <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Alle 20 Module im Überblick</h2>
           </div>
-          <p className="max-w-xl text-sm leading-6 text-ink/65">
+          <p className="max-w-xl text-sm leading-6 text-ink/70">
             Jede Modulkarte zeigt Nummer, Titel, Kurzbeschreibung, Lektionsanzahl und führt zur Detailseite mit Ergebnis und Unterlektionen.
           </p>
         </div>
@@ -147,9 +150,9 @@ function ModulesSection() {
                 <module.icon className="text-success" size={24} />
               </div>
               <h3 className="mt-6 text-2xl font-black text-navy">{module.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-6 text-ink/65">{module.description}</p>
+              <p className="mt-3 flex-1 text-sm leading-6 text-ink/70">{module.description}</p>
               <div className="mt-5 flex items-center justify-between border-t border-gold/20 pt-4">
-                <span className="text-sm font-bold text-ink/55">{module.lessonCount} Lektionen</span>
+                <span className="text-sm font-bold text-ink/60">{module.lessonCount} Lektionen</span>
                 <span className="inline-flex items-center gap-1 text-sm font-black text-navy group-hover:text-goldDark">
                   Modul ansehen <ChevronRight size={16} />
                 </span>
@@ -164,8 +167,8 @@ function ModulesSection() {
 
 function ProgressSection() {
   return (
-    <section id="fortschritt" className="bg-navy py-20 text-white">
-      <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+    <section id="fortschritt" className="luxury-dark py-20 text-white">
+      <div className="section-shell relative grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">Dein Fortschritt</p>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl">Dein Weg durch alle 20 Module</h2>
@@ -212,7 +215,7 @@ function PricingSection() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Preise</p>
           <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Wähle dein Paket</h2>
-          <p className="mt-4 text-sm leading-7 text-ink/65">
+          <p className="mt-4 text-sm leading-7 text-ink/70">
             Starte mit einem einzelnen Modul oder sichere dir den vollständigen PaperFlow-Fahrplan.
           </p>
         </div>
@@ -241,11 +244,11 @@ function PricingSection() {
 
 function ComparisonSection() {
   return (
-    <section id="vergleich" className="py-20">
+    <section id="vergleich" className="luxury-dark py-20">
       <div className="section-shell">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Vorher und Nachher</p>
-          <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Aus Unsicherheit wird ein klarer Prozess</h2>
+          <h2 className="mt-3 text-3xl font-black text-paper sm:text-4xl">Aus Unsicherheit wird ein klarer Prozess</h2>
         </div>
         <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-[1fr_auto_1fr]">
           <ComparisonCard title="Ohne Kurs" items={comparison.before} tone="before" />
@@ -266,7 +269,7 @@ function ComparisonCard({ title, items, tone }) {
   return (
     <article className="card p-7">
       <div className="flex items-center gap-4">
-        <div className={`flex h-12 w-12 items-center justify-center rounded-md ${tone === "after" ? "bg-success text-white" : "bg-slate-100 text-ink/65"}`}>
+        <div className={`flex h-12 w-12 items-center justify-center rounded-md ${tone === "after" ? "bg-success text-white" : "bg-slate-100 text-ink/70"}`}>
           <Icon size={24} />
         </div>
         <h3 className="text-2xl font-black text-navy">{title}</h3>

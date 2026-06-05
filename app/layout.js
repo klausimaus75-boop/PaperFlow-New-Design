@@ -6,9 +6,9 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
-  title: "PaperFlow | Selfpublishing-Kurs fuer Amazon KDP",
+  title: "PaperFlow | Luxus Selfpublishing Akademie",
   description:
-    "PaperFlow zeigt Anfaengern Schritt fuer Schritt, wie sie Selfpublishing-Buecher ueber Amazon KDP erstellen, veroeffentlichen, bewerben und erste Einnahmen erzielen."
+    "PaperFlow zeigt Anfängern Schritt für Schritt, wie sie Selfpublishing-Bücher über Amazon KDP erstellen, veröffentlichen, bewerben und erste Einnahmen erzielen."
 };
 
 export default function RootLayout({ children }) {

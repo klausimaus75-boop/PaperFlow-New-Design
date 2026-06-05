@@ -24,7 +24,9 @@ export default async function ModuleDetailPage({ params }) {
   if (!module) notFound();
 
   return (
-    <section className="section-shell py-14 lg:py-20">
+    <section className="luxury-dark min-h-screen py-14 lg:py-20">
+      <div className="silk-scarf" aria-hidden="true" />
+      <div className="section-shell relative">
       <Link href="/#module" className="outline-button mb-8">
         <ArrowLeft size={18} /> Zurück zur Übersicht
       </Link>
@@ -33,15 +35,15 @@ export default async function ModuleDetailPage({ params }) {
           <div className="mb-5 inline-flex items-center gap-2 rounded-md bg-gold/20 px-3 py-2 text-sm font-black text-goldDark">
             Modul {module.number}
           </div>
-          <h1 className="text-4xl font-black leading-tight text-navy sm:text-5xl">{module.title}</h1>
-          <p className="mt-6 text-lg leading-8 text-ink/75">{module.description}</p>
+          <h1 className="text-4xl font-black leading-tight text-paper sm:text-5xl">{module.title}</h1>
+          <p className="mt-6 text-lg leading-8 text-white/80">{module.description}</p>
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
             <div className="card p-5">
-              <p className="text-sm font-bold uppercase text-ink/55">Lektionen</p>
+              <p className="text-sm font-bold uppercase text-ink/60">Lektionen</p>
               <p className="mt-2 text-3xl font-black text-navy">{module.lessonCount}</p>
             </div>
             <div className="card p-5">
-              <p className="text-sm font-bold uppercase text-ink/55">Format</p>
+              <p className="text-sm font-bold uppercase text-ink/60">Format</p>
               <p className="mt-2 text-3xl font-black text-navy">Modul</p>
             </div>
           </div>
@@ -99,6 +101,7 @@ export default async function ModuleDetailPage({ params }) {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
