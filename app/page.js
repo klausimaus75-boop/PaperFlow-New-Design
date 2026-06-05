@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, ChevronRight, Layers3, Sparkles } from "lucide-react";
+import ModuleSelector from "@/components/ModuleSelector";
 import {
   CheckIcon,
   comparison,
@@ -118,24 +119,7 @@ function OverviewSection() {
             PaperFlow führt dich Schritt für Schritt vom spielerischen Bot-Einstieg über Buchidee, Konzept, Prompts, Buchtypen, Cover, Layout und Qualitätsprüfung bis zur KDP-Veröffentlichung und Vermarktung.
           </p>
         </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {modules.map((module) => (
-            <Link key={module.slug} href={`/module/${module.slug}`} className="card group p-5 transition hover:-translate-y-1 hover:border-gold">
-              <div className="flex items-start justify-between gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-navy text-sm font-black text-gold">
-                  {String(module.number).padStart(2, "0")}
-                </span>
-                <module.icon className="text-success" size={22} />
-              </div>
-              <p className="mt-5 text-xs font-black uppercase tracking-[0.22em] text-goldDark">Modul {module.number}</p>
-              <h3 className="mt-2 text-xl font-black text-navy">{module.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-ink/70">{module.description}</p>
-              <span className="mt-5 inline-flex items-center gap-1 text-xs font-black uppercase tracking-widest text-navy group-hover:text-goldDark">
-                {module.lessonCount} Lektionen <ChevronRight size={14} />
-              </span>
-            </Link>
-          ))}
-        </div>
+        <ModuleSelector modules={modules.map(({ icon, benefits, ...module }) => module)} />
       </div>
     </section>
   );
