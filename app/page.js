@@ -97,22 +97,26 @@ function OverviewSection() {
       <div className="section-shell">
         <div className="max-w-3xl">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Kurs-Überblick</p>
-          <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Worum geht es in der PaperFlow Akademie?</h2>
+          <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Dein Kursfahrplan in 6 Phasen</h2>
           <p className="mt-5 text-lg leading-8 text-ink/75">
             PaperFlow begleitet dich von der spielerischen Bot-Nutzung über Buchidee, Konzept, Prompts, Layout, Qualitätsprüfung und KDP-Veröffentlichung bis hin zu Keywords und Marketing.
           </p>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {courseBenefits.map(({ title, description, icon: Icon }) => (
-            <article key={title} className="card p-6 transition hover:-translate-y-1">
+          {courseBenefits.map(({ title, moduleRange, href, description, icon: Icon }) => (
+            <Link key={title} href={href} className="card group p-6 transition hover:-translate-y-1 hover:border-gold">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md border border-gold/35 bg-navy text-gold">
                 <Icon size={24} />
               </div>
+              <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-goldDark">{moduleRange}</p>
               <h3 className="text-xl font-black text-navy">{title}</h3>
               <p className="mt-3 text-sm leading-6 text-ink/65">
                 {description}
               </p>
-            </article>
+              <span className="mt-5 inline-flex items-center gap-1 text-xs font-black uppercase tracking-widest text-navy group-hover:text-goldDark">
+                Phase ansehen <ChevronRight size={14} />
+              </span>
+            </Link>
           ))}
         </div>
       </div>
