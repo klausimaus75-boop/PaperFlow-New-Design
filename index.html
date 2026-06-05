@@ -24,13 +24,7 @@
         margin: 0;
         color: var(--ink);
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background:
-          radial-gradient(circle at 78% 18%, rgba(216, 183, 181, 0.18), transparent 28rem),
-          radial-gradient(circle at 16% 8%, rgba(215, 170, 99, 0.08), transparent 25rem),
-          linear-gradient(118deg, transparent 0 58%, rgba(215, 170, 99, 0.09) 59%, transparent 61%),
-          linear-gradient(132deg, transparent 0 68%, rgba(216, 183, 181, 0.12) 69%, transparent 75%),
-          linear-gradient(180deg, #08111d 0%, #101b29 42%, #f5ecdf 42%, #fff8ee 100%);
-        background-attachment: fixed;
+        background: var(--navy);
       }
 
       a { color: inherit; text-decoration: none; }
@@ -57,26 +51,40 @@
       .btn-outline { border: 1px solid rgba(200,155,79,.35); background: rgba(255,255,255,.78); color: var(--navy); }
 
       section { position: relative; overflow: hidden; padding: 82px 0; }
-      .hero { min-height: calc(100vh - 80px); display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 48px; padding: 48px 0 64px; }
+      .hero {
+        width: 100%;
+        min-height: calc(100vh - 80px);
+        display: grid;
+        grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr);
+        align-items: center;
+        gap: 48px;
+        padding: 48px max(16px, calc((100vw - 1180px) / 2)) 64px;
+        background:
+          radial-gradient(circle at 84% 42%, rgba(255,248,238,.08), transparent 20rem),
+          radial-gradient(circle at 26% 20%, rgba(215,170,99,.09), transparent 18rem),
+          linear-gradient(118deg, rgba(215,170,99,.1) 0 1px, transparent 1px 38%),
+          linear-gradient(180deg, #08111d 0%, #101b29 100%);
+        isolation: isolate;
+      }
       .hero::before {
         position: absolute;
-        right: -10rem;
-        top: 48%;
-        width: min(68vw, 54rem);
-        height: 17rem;
+        right: -7rem;
+        top: 42%;
+        width: min(58vw, 46rem);
+        height: 15rem;
         border-radius: 999px;
         background:
           linear-gradient(120deg, rgba(255,255,255,0), rgba(203,198,190,.9) 28%, rgba(100,104,111,.58) 48%, rgba(238,230,218,.32) 67%, rgba(8,17,29,0) 88%),
           repeating-linear-gradient(106deg, rgba(255,255,255,.22) 0 2px, rgba(0,0,0,.06) 2px 10px);
         box-shadow: 0 34px 90px rgba(0,0,0,.35);
         content: "";
-        opacity: .9;
+        opacity: .78;
         transform: rotate(-9deg);
       }
       .hero::after {
         position: absolute;
         right: -3rem;
-        bottom: 3.8rem;
+        bottom: 1.6rem;
         width: min(32vw, 26rem);
         height: 10rem;
         border-radius: 58% 42% 64% 36% / 45% 49% 51% 55%;
@@ -91,12 +99,66 @@
         transform: rotate(-15deg);
       }
       .hero > *, section > .shell { position: relative; z-index: 1; }
+      .hero h1 { color: var(--paper); text-shadow: 0 4px 26px rgba(0,0,0,.48); }
+      .hero p { color: rgba(255,255,255,.84); }
+      .hero-decor {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        width: min(26vw, 21rem);
+        height: min(48vw, 34rem);
+        pointer-events: none;
+      }
+      .hero-decor::before {
+        position: absolute;
+        right: 4.4rem;
+        bottom: 7rem;
+        width: 1.2rem;
+        height: 23rem;
+        border-radius: 999px;
+        background: linear-gradient(180deg, rgba(177,156,103,.18), rgba(148,137,102,.72), rgba(53,59,53,.4));
+        content: "";
+        transform: rotate(-12deg);
+        transform-origin: bottom;
+      }
+      .hero-decor::after {
+        position: absolute;
+        right: -1.6rem;
+        bottom: -1.2rem;
+        width: 19rem;
+        height: 9rem;
+        border-radius: 65% 35% 0 0 / 100% 100% 0 0;
+        background:
+          radial-gradient(ellipse at 36% 30%, rgba(255,255,255,.34), transparent 20%),
+          repeating-linear-gradient(104deg, rgba(255,255,255,.2) 0 1px, rgba(24,26,29,.16) 1px 12px),
+          linear-gradient(120deg, #7f7b75, #3c3d40 45%, #c9c2b6);
+        box-shadow: 0 -16px 46px rgba(0,0,0,.34);
+        content: "";
+        opacity: .9;
+        transform: rotate(-5deg);
+      }
+      .leaf {
+        position: absolute;
+        right: 3rem;
+        bottom: 17rem;
+        width: 4.7rem;
+        height: 1.8rem;
+        border-radius: 100% 0 100% 0;
+        background: linear-gradient(135deg, #7b815f, #283327 72%);
+        transform-origin: left center;
+      }
+      .leaf.one { transform: rotate(-38deg); }
+      .leaf.two { right: 6rem; bottom: 20rem; transform: scale(.92) rotate(-70deg); }
+      .leaf.three { right: 2.4rem; bottom: 22.5rem; transform: scale(.75) rotate(-22deg); }
+      .leaf.four { right: 7.2rem; bottom: 15.7rem; transform: scale(.82) rotate(-118deg); }
+      .leaf.five { right: 3.8rem; bottom: 26rem; transform: scale(.62) rotate(-42deg); }
       .eyebrow { display: inline-flex; border: 1px solid rgba(200,155,79,.4); border-radius: 8px; background: rgba(255,255,255,.72); padding: 9px 12px; color: var(--navy); font-size: 14px; font-weight: 900; }
       h1 { margin-top: 20px; font-size: clamp(40px, 6vw, 68px); line-height: 1.05; font-weight: 950; }
       h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.12; font-weight: 950; }
       h3 { font-size: 22px; line-height: 1.2; font-weight: 950; }
-      .lead, .hero p { color: rgba(58,27,53,.76); font-size: 17px; line-height: 1.75; }
-      .hero p { margin-top: 22px; color: rgba(255,248,238,.82); }
+      .lead { color: rgba(58,27,53,.76); font-size: 17px; line-height: 1.75; }
+      .hero p { margin-top: 22px; font-size: 17px; line-height: 1.75; }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
       .stats { display: grid; max-width: 620px; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 38px; }
       .stat { border: 1px solid rgba(200,155,79,.25); border-radius: 8px; background: rgba(255,255,255,.72); padding: 18px; }
@@ -180,12 +242,13 @@
         .nav, .header .btn-gold { display: none; }
         .mobile-toggle { display: inline-flex; align-items: center; justify-content: center; }
         .hero, .progress-layout, .comparison, .footer-grid { grid-template-columns: 1fr; }
+        .hero-decor { display: none; }
         .benefit-grid, .module-grid, .pricing-grid, .progress-grid { grid-template-columns: repeat(2, 1fr); }
         .arrow-circle { display: none; }
       }
       @media (max-width: 640px) {
         .shell { width: min(100% - 24px, 1180px); }
-        .hero { padding-top: 34px; }
+        .hero { padding-top: 34px; padding-left: 12px; padding-right: 12px; }
         .stats, .benefit-grid, .module-grid, .pricing-grid, .progress-grid { grid-template-columns: 1fr; }
         .hero-actions { flex-direction: column; }
         .btn { width: 100%; }
@@ -221,7 +284,14 @@
     </header>
 
     <main id="top">
-      <section class="shell hero" style="color:var(--paper)">
+      <section class="hero" style="color:var(--paper)">
+        <div class="hero-decor" aria-hidden="true">
+          <span class="leaf one"></span>
+          <span class="leaf two"></span>
+          <span class="leaf three"></span>
+          <span class="leaf four"></span>
+          <span class="leaf five"></span>
+        </div>
         <div>
           <span class="eyebrow">Luxus Selfpublishing Academy</span>
           <h1>Dein einfacher Weg zum Selfpublishing-Erfolg auf Amazon KDP</h1>

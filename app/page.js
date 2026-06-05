@@ -28,10 +28,17 @@ export default function HomePage() {
 
 function HeroSection() {
   return (
-    <section className="luxury-dark relative min-h-[calc(100vh-5rem)]">
+    <section className="hero-luxury luxury-dark relative min-h-[calc(100vh-5rem)]">
       <div className="luxury-band" aria-hidden="true" />
       <div className="silk-scarf silk-scarf-hero" aria-hidden="true" />
       <div className="silk-fold silk-fold-hero" aria-hidden="true" />
+      <div className="hero-side-decor" aria-hidden="true">
+        <span className="hero-leaf hero-leaf-one" />
+        <span className="hero-leaf hero-leaf-two" />
+        <span className="hero-leaf hero-leaf-three" />
+        <span className="hero-leaf hero-leaf-four" />
+        <span className="hero-leaf hero-leaf-five" />
+      </div>
       <div className="gold-orbit gold-orbit-hero" aria-hidden="true" />
       <div className="stage-glow stage-glow-hero" aria-hidden="true" />
       <div className="dust dust-right" aria-hidden="true" />
@@ -45,7 +52,7 @@ function HeroSection() {
           <span>/</span>
         </div>
       </div>
-      <div className="botanical-line">
+      <div className="hero-copy botanical-line">
         <div className="mb-5 inline-flex items-center gap-2 rounded-md border border-gold/45 bg-white/5 px-3 py-2 text-sm font-bold uppercase tracking-[0.28em] text-gold">
           <Sparkles size={16} className="text-goldDark" />
           Luxus Selfpublishing Academy
