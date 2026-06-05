@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
-  { label: "Ueberblick", href: "/#ueberblick" },
+  { label: "Überblick", href: "/#ueberblick" },
   { label: "Module", href: "/#module" },
   { label: "Fortschritt", href: "/#fortschritt" },
   { label: "Preise", href: "/#preise" },
@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-gold/25 bg-paper/90 backdrop-blur-xl">
       <div className="hidden border-b border-gold/20 bg-navy py-2 text-center text-[11px] font-bold uppercase tracking-[0.35em] text-gold sm:block">
-        01 Luxury Bloom · PaperFlow Design
+        01 Luxury Bloom - PaperFlow Design
       </div>
       <div className="section-shell flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3 text-xl font-black text-navy">
@@ -41,7 +41,7 @@ export default function Header() {
         <button
           className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-gold/35 bg-white lg:hidden"
           onClick={() => setOpen((value) => !value)}
-          aria-label={open ? "Navigation schliessen" : "Navigation oeffnen"}
+          aria-label={open ? "Navigation schließen" : "Navigation öffnen"}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>

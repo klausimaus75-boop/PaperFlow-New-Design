@@ -9,9 +9,9 @@ export default function KontaktPage() {
     <section className="section-shell py-16">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <p className="text-sm font-black uppercase text-success">Kontakt</p>
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Kontakt</p>
           <h1 className="mt-3 text-4xl font-black text-navy sm:text-5xl">Fragen zu PaperFlow?</h1>
-          <p className="mt-5 text-lg leading-8 text-slate-700">
+          <p className="mt-5 text-lg leading-8 text-ink/75">
             Schreib uns, wenn du wissen möchtest, welches Paket zu deinem Buchprojekt passt oder wie der Kurs aufgebaut ist.
           </p>
           <div className="mt-8 grid gap-4">

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 
 const nav = [
-  { label: "Ueberblick", href: "/#ueberblick" },
+  { label: "Überblick", href: "/#ueberblick" },
   { label: "Module", href: "/#module" },
   { label: "Preise", href: "/#preise" },
   { label: "Kontakt", href: "/kontakt" }
@@ -15,7 +15,7 @@ export default function Footer() {
         <div>
           <div className="mb-4 font-serif text-3xl font-black tracking-wide text-gold">PaperFlow</div>
           <p className="max-w-sm text-sm leading-7 text-white/72">
-            Der deutsche Onlinekurs fuer Einsteiger, die Selfpublishing auf Amazon KDP strukturiert lernen und ihr erstes Buchprojekt starten wollen.
+            Der deutsche Onlinekurs für Einsteiger, die Selfpublishing auf Amazon KDP strukturiert lernen und ihr erstes Buchprojekt starten wollen.
           </p>
         </div>
         <div>

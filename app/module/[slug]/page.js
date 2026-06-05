@@ -34,14 +34,14 @@ export default async function ModuleDetailPage({ params }) {
             Modul {module.number}
           </div>
           <h1 className="text-4xl font-black leading-tight text-navy sm:text-5xl">{module.title}</h1>
-          <p className="mt-6 text-lg leading-8 text-slate-700">{module.description}</p>
+          <p className="mt-6 text-lg leading-8 text-ink/75">{module.description}</p>
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
             <div className="card p-5">
-              <p className="text-sm font-bold uppercase text-slate-500">Lektionen</p>
+              <p className="text-sm font-bold uppercase text-ink/55">Lektionen</p>
               <p className="mt-2 text-3xl font-black text-navy">{module.lessons}</p>
             </div>
             <div className="card p-5">
-              <p className="text-sm font-bold uppercase text-slate-500">Format</p>
+              <p className="text-sm font-bold uppercase text-ink/55">Format</p>
               <p className="mt-2 text-3xl font-black text-navy">Präsentation</p>
             </div>
           </div>
@@ -59,12 +59,12 @@ export default async function ModuleDetailPage({ params }) {
           <div className="bg-navy p-7 text-white">
             <div className="flex items-center justify-between gap-5">
               <div>
-                <p className="text-sm font-black uppercase text-gold">Kursvorschau</p>
+                <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">Kursvorschau</p>
                 <h2 className="mt-2 text-2xl font-black">{module.title}</h2>
               </div>
               <module.icon className="text-gold" size={36} />
             </div>
-            <div className="mt-8 rounded-lg border border-white/15 bg-white/10 p-6">
+            <div className="mt-8 rounded-lg border border-gold/20 bg-white/10 p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gold text-navy">
                 <PlayCircle size={26} />
               </div>
@@ -77,7 +77,7 @@ export default async function ModuleDetailPage({ params }) {
             <h3 className="text-xl font-black text-navy">Vorteile dieses Moduls</h3>
             <ul className="mt-5 grid gap-4">
               {module.benefits.map((benefit) => (
-                <li key={benefit} className="flex gap-3 text-sm leading-6 text-slate-700">
+                <li key={benefit} className="flex gap-3 text-sm leading-6 text-ink/75">
                   <Check className="mt-0.5 shrink-0 text-success" size={18} />
                   {benefit}
                 </li>

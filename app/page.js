@@ -1,6 +1,6 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, ChevronRight, Layers3, PlayCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Check, ChevronRight, Layers3, Sparkles } from "lucide-react";
 import { CheckIcon, comparison, courseBenefits, modules, pricingPlans, RocketIcon, SearchIcon, totalProgress } from "@/lib/courseData";
 
 export default function HomePage() {
@@ -37,7 +37,7 @@ function HeroSection() {
           Dein einfacher Weg zum Selfpublishing-Erfolg auf Amazon KDP
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/75">
-          Lerne Schritt fÃ¼r Schritt, wie du profitable BÃ¼cher erstellst, verÃ¶ffentlichst und bewirbst, auch ohne Vorkenntnisse.
+          Lerne Schritt für Schritt, wie du profitable Bücher erstellst, veröffentlichst und bewirbst, auch ohne Vorkenntnisse.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link href="#preise" className="gold-button">
@@ -86,10 +86,10 @@ function OverviewSection() {
     <section id="ueberblick" className="marble-panel py-20">
       <div className="section-shell">
         <div className="max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Kurs-Ãœberblick</p>
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Kurs-Überblick</p>
           <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Worum geht es in diesem Kurs?</h2>
           <p className="mt-5 text-lg leading-8 text-ink/75">
-            PaperFlow begleitet dich von der Buchidee bis zur VerÃ¶ffentlichung, Vermarktung und den ersten Einnahmen. Du lernst einen klaren Prozess, der AnfÃ¤ngern Orientierung gibt und jede Phase greifbar macht.
+            PaperFlow begleitet dich von der Buchidee bis zur Veröffentlichung, Vermarktung und den ersten Einnahmen. Du lernst einen klaren Prozess, der Anfängern Orientierung gibt und jede Phase greifbar macht.
           </p>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -99,7 +99,9 @@ function OverviewSection() {
                 <Icon size={24} />
               </div>
               <h3 className="text-xl font-black text-navy">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-ink/65">Ein klarer Lernschritt mit verstÃ¤ndlichem Fokus, passenden Beispielen und direktem Nutzen fÃ¼r dein Buchprojekt.</p>
+              <p className="mt-3 text-sm leading-6 text-ink/65">
+                Ein klarer Lernschritt mit verständlichem Fokus, passenden Beispielen und direktem Nutzen für dein Buchprojekt.
+              </p>
             </article>
           ))}
         </div>
@@ -115,9 +117,11 @@ function ModulesSection() {
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Module</p>
-            <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Alle Module im Ãœberblick</h2>
+            <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Alle Module im Überblick</h2>
           </div>
-          <p className="max-w-xl text-sm leading-6 text-ink/65">Jedes Modul kann separat gekauft werden. Der Komplettkurs verbindet alle Schritte zu einem durchgehenden Fahrplan.</p>
+          <p className="max-w-xl text-sm leading-6 text-ink/65">
+            Jedes Modul kann separat gekauft werden. Der Komplettkurs verbindet alle Schritte zu einem durchgehenden Fahrplan.
+          </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {modules.map((module) => (
@@ -149,7 +153,9 @@ function ProgressSection() {
         <div>
           <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">Dein Fortschritt</p>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl">Vom ersten Modul bis zum fertigen Buch</h2>
-          <p className="mt-5 text-sm leading-7 text-white/70">Die Fortschrittskarten zeigen beispielhaft, wie ein Lernbereich aussehen kann. Der Gesamtfortschritt fasst alle Module zusammen.</p>
+          <p className="mt-5 text-sm leading-7 text-white/70">
+            Die Fortschrittskarten zeigen beispielhaft, wie ein Lernbereich aussehen kann. Der Gesamtfortschritt fasst alle Module zusammen.
+          </p>
           <div className="mt-8 inline-flex h-44 w-44 items-center justify-center rounded-full bg-[conic-gradient(#c89b4f_0_29%,rgba(255,255,255,0.15)_29%_100%)] p-3">
             <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-navy">
               <span className="text-5xl font-black text-gold">{totalProgress}%</span>
@@ -182,8 +188,10 @@ function PricingSection() {
       <div className="section-shell">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Preise</p>
-          <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">WÃ¤hle dein Paket</h2>
-          <p className="mt-4 text-sm leading-7 text-ink/65">Starte mit einem einzelnen Modul oder sichere dir den vollstÃ¤ndigen PaperFlow-Fahrplan.</p>
+          <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Wähle dein Paket</h2>
+          <p className="mt-4 text-sm leading-7 text-ink/65">
+            Starte mit einem einzelnen Modul oder sichere dir den vollständigen PaperFlow-Fahrplan.
+          </p>
         </div>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {pricingPlans.map((plan) => (
@@ -251,4 +259,3 @@ function ComparisonCard({ title, items, tone }) {
     </article>
   );
 }
-
