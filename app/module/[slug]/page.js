@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Check, PlayCircle, ShoppingCart } from "lucide-react";
+import { ArrowLeft, Check, ListChecks, PlayCircle, ShoppingCart } from "lucide-react";
 import { modules } from "@/lib/courseData";
 
 export function generateStaticParams() {
@@ -38,11 +38,11 @@ export default async function ModuleDetailPage({ params }) {
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
             <div className="card p-5">
               <p className="text-sm font-bold uppercase text-ink/55">Lektionen</p>
-              <p className="mt-2 text-3xl font-black text-navy">{module.lessons}</p>
+              <p className="mt-2 text-3xl font-black text-navy">{module.lessonCount}</p>
             </div>
             <div className="card p-5">
               <p className="text-sm font-bold uppercase text-ink/55">Format</p>
-              <p className="mt-2 text-3xl font-black text-navy">Präsentation</p>
+              <p className="mt-2 text-3xl font-black text-navy">Modul</p>
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -59,7 +59,7 @@ export default async function ModuleDetailPage({ params }) {
           <div className="bg-navy p-7 text-white">
             <div className="flex items-center justify-between gap-5">
               <div>
-                <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">Kursvorschau</p>
+                <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">Ergebnis</p>
                 <h2 className="mt-2 text-2xl font-black">{module.title}</h2>
               </div>
               <module.icon className="text-gold" size={36} />
@@ -68,21 +68,35 @@ export default async function ModuleDetailPage({ params }) {
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gold text-navy">
                 <PlayCircle size={26} />
               </div>
-              <p className="text-sm leading-7 text-white/75">
-                Vorschaukarte im Präsentationsstil: klare Lernziele, visuelle Folienstruktur und kompakte Umsetzungsimpulse statt vollständiger Lektionen.
-              </p>
+              <p className="text-sm leading-7 text-white/80">{module.outcome}</p>
             </div>
           </div>
           <div className="p-7">
-            <h3 className="text-xl font-black text-navy">Vorteile dieses Moduls</h3>
-            <ul className="mt-5 grid gap-4">
-              {module.benefits.map((benefit) => (
-                <li key={benefit} className="flex gap-3 text-sm leading-6 text-ink/75">
-                  <Check className="mt-0.5 shrink-0 text-success" size={18} />
-                  {benefit}
+            <div className="flex items-center gap-3">
+              <ListChecks className="text-success" size={22} />
+              <h3 className="text-xl font-black text-navy">Unterlektionen</h3>
+            </div>
+            <ol className="mt-5 grid gap-3 sm:grid-cols-2">
+              {module.lessons.map((lesson, index) => (
+                <li key={lesson} className="flex gap-3 rounded-md border border-gold/15 bg-white/70 p-3 text-sm leading-6 text-ink/75">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-black text-goldDark">
+                    {index + 1}
+                  </span>
+                  <span>{lesson}</span>
                 </li>
               ))}
-            </ul>
+            </ol>
+            <div className="mt-7 rounded-lg border border-gold/20 bg-paper/70 p-5">
+              <h3 className="text-lg font-black text-navy">Vorteile dieses Moduls</h3>
+              <ul className="mt-4 grid gap-3">
+                {module.benefits.map((benefit) => (
+                  <li key={benefit} className="flex gap-3 text-sm leading-6 text-ink/75">
+                    <Check className="mt-0.5 shrink-0 text-success" size={18} />
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

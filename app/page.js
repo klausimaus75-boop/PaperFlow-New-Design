@@ -1,7 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, ChevronRight, Layers3, Sparkles } from "lucide-react";
-import { CheckIcon, comparison, courseBenefits, modules, pricingPlans, RocketIcon, SearchIcon, totalProgress } from "@/lib/courseData";
+import {
+  CheckIcon,
+  comparison,
+  courseBenefits,
+  modules,
+  pricingPlans,
+  RocketIcon,
+  SearchIcon,
+  totalLessonCount,
+  totalProgress
+} from "@/lib/courseData";
 
 export default function HomePage() {
   return (
@@ -31,7 +41,7 @@ function HeroSection() {
       <div className="botanical-line">
         <div className="mb-5 inline-flex items-center gap-2 rounded-md border border-gold/40 bg-white/70 px-3 py-2 text-sm font-bold text-navy">
           <Sparkles size={16} className="text-goldDark" />
-          Luxury Bloom Variante B - Selfpublishing lernen
+          PaperFlow Akademie - 20 Kursmodule
         </div>
         <h1 className="max-w-3xl text-4xl font-black leading-tight text-navy sm:text-5xl lg:text-7xl">
           Dein einfacher Weg zum Selfpublishing-Erfolg auf Amazon KDP
@@ -49,8 +59,8 @@ function HeroSection() {
         </div>
         <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3">
           {[
-            ["7", "Module"],
-            ["53", "Lektionen"],
+            [String(modules.length), "Module"],
+            [String(totalLessonCount), "Lektionen"],
             ["100%", "Einsteigerfokus"]
           ].map(([value, label]) => (
             <div key={label} className="rounded-lg border border-gold/25 bg-white/70 p-4">
@@ -89,7 +99,7 @@ function OverviewSection() {
           <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Kurs-Überblick</p>
           <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Worum geht es in diesem Kurs?</h2>
           <p className="mt-5 text-lg leading-8 text-ink/75">
-            PaperFlow begleitet dich von der Buchidee bis zur Veröffentlichung, Vermarktung und den ersten Einnahmen. Du lernst einen klaren Prozess, der Anfängern Orientierung gibt und jede Phase greifbar macht.
+            PaperFlow begleitet dich von der spielerischen Bot-Nutzung über Buchidee, Konzept, Prompts, Layout, Qualitätsprüfung und KDP-Veröffentlichung bis hin zu Keywords und Marketing.
           </p>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -117,25 +127,27 @@ function ModulesSection() {
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.25em] text-success">Module</p>
-            <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Alle Module im Überblick</h2>
+            <h2 className="mt-3 text-3xl font-black text-navy sm:text-4xl">Alle 20 Module im Überblick</h2>
           </div>
           <p className="max-w-xl text-sm leading-6 text-ink/65">
-            Jedes Modul kann separat gekauft werden. Der Komplettkurs verbindet alle Schritte zu einem durchgehenden Fahrplan.
+            Jede Modulkarte zeigt Nummer, Titel, Kurzbeschreibung, Lektionsanzahl und führt zur Detailseite mit Ergebnis und Unterlektionen.
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {modules.map((module) => (
             <Link key={module.slug} href={`/module/${module.slug}`} className="card group flex min-h-64 flex-col p-6 transition hover:-translate-y-1 hover:border-gold">
               <div className="flex items-start justify-between gap-4">
-                <span className="rounded-md bg-gold/20 px-3 py-2 text-xs font-black text-goldDark">Modul {module.number}</span>
+                <span className="rounded-md bg-gold/20 px-3 py-2 text-xs font-black text-goldDark">
+                  Modul {module.number}
+                </span>
                 <module.icon className="text-success" size={24} />
               </div>
               <h3 className="mt-6 text-2xl font-black text-navy">{module.title}</h3>
               <p className="mt-3 flex-1 text-sm leading-6 text-ink/65">{module.description}</p>
               <div className="mt-5 flex items-center justify-between border-t border-gold/20 pt-4">
-                <span className="text-sm font-bold text-ink/55">{module.lessons} Lektionen</span>
+                <span className="text-sm font-bold text-ink/55">{module.lessonCount} Lektionen</span>
                 <span className="inline-flex items-center gap-1 text-sm font-black text-navy group-hover:text-goldDark">
-                  Details <ChevronRight size={16} />
+                  Modul ansehen <ChevronRight size={16} />
                 </span>
               </div>
             </Link>
@@ -152,11 +164,11 @@ function ProgressSection() {
       <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="text-sm font-black uppercase tracking-[0.25em] text-gold">Dein Fortschritt</p>
-          <h2 className="mt-3 text-3xl font-black sm:text-4xl">Vom ersten Modul bis zum fertigen Buch</h2>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl">Vom ersten Bot-Test bis zum Marketingplan</h2>
           <p className="mt-5 max-w-md text-sm leading-7 text-white/80">
-            Die Fortschrittskarten zeigen beispielhaft, wie ein Lernbereich aussehen kann. Der Gesamtfortschritt fasst alle Module zusammen.
+            Die Fortschrittskarten zeigen beispielhaft, wie ein Lernbereich mit allen 20 Modulen aussehen kann.
           </p>
-          <div className="mt-8 inline-flex h-44 w-44 items-center justify-center rounded-full bg-[conic-gradient(#c89b4f_0_29%,rgba(255,255,255,0.15)_29%_100%)] p-3">
+          <div className="mt-8 inline-flex h-44 w-44 items-center justify-center rounded-full bg-[conic-gradient(#c89b4f_0_5%,rgba(255,255,255,0.15)_5%_100%)] p-3">
             <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-navy">
               <span className="text-5xl font-black text-gold">{totalProgress}%</span>
               <span className="mt-1 text-xs font-bold uppercase text-white/60">Gesamt</span>
@@ -164,7 +176,7 @@ function ProgressSection() {
           </div>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
-          {modules.map((module) => (
+          {modules.slice(0, 8).map((module) => (
             <article key={module.slug} className="rounded-lg border border-gold/30 bg-white/10 p-5 shadow-[0_14px_34px_rgba(0,0,0,0.16)]">
               <div className="flex items-center justify-between gap-3">
                 <h3 className="font-black">{module.title}</h3>
