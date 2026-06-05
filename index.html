@@ -24,7 +24,20 @@
         margin: 0;
         color: var(--ink);
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: var(--navy);
+        background:
+          linear-gradient(rgba(8,17,29,.2), rgba(8,17,29,.2)),
+          url("public/paperflow-luxury-background.png") center top / cover fixed no-repeat,
+          var(--navy);
+      }
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+          linear-gradient(90deg, rgba(8,17,29,.84), rgba(8,17,29,.5) 48%, rgba(8,17,29,.22)),
+          radial-gradient(circle at 48% 22%, rgba(215,170,99,.08), transparent 26rem);
+        content: "";
       }
 
       a { color: inherit; text-decoration: none; }
@@ -59,45 +72,11 @@
         align-items: center;
         gap: 48px;
         padding: 48px max(16px, calc((100vw - 1180px) / 2)) 64px;
-        background:
-          radial-gradient(circle at 84% 42%, rgba(255,248,238,.08), transparent 20rem),
-          radial-gradient(circle at 26% 20%, rgba(215,170,99,.09), transparent 18rem),
-          linear-gradient(118deg, rgba(215,170,99,.1) 0 1px, transparent 1px 38%),
-          linear-gradient(180deg, #08111d 0%, #101b29 100%);
+        background: transparent;
         isolation: isolate;
       }
-      .hero::before {
-        position: absolute;
-        right: -7rem;
-        top: 42%;
-        width: min(58vw, 46rem);
-        height: 15rem;
-        border-radius: 999px;
-        background:
-          linear-gradient(120deg, rgba(255,255,255,0), rgba(203,198,190,.9) 28%, rgba(100,104,111,.58) 48%, rgba(238,230,218,.32) 67%, rgba(8,17,29,0) 88%),
-          repeating-linear-gradient(106deg, rgba(255,255,255,.22) 0 2px, rgba(0,0,0,.06) 2px 10px);
-        box-shadow: 0 34px 90px rgba(0,0,0,.35);
-        content: "";
-        opacity: .78;
-        transform: rotate(-9deg);
-      }
-      .hero::after {
-        position: absolute;
-        right: -3rem;
-        bottom: 1.6rem;
-        width: min(32vw, 26rem);
-        height: 10rem;
-        border-radius: 58% 42% 64% 36% / 45% 49% 51% 55%;
-        background:
-          radial-gradient(ellipse at 18% 42%, rgba(255,255,255,.42), transparent 18%),
-          radial-gradient(ellipse at 44% 56%, rgba(16,20,26,.34), transparent 24%),
-          repeating-linear-gradient(102deg, rgba(255,255,255,.18) 0 1px, rgba(32,35,41,.11) 1px 9px),
-          linear-gradient(110deg, rgba(228,224,217,.86), rgba(98,103,111,.78) 48%, rgba(235,225,212,.54));
-        content: "";
-        filter: drop-shadow(0 26px 42px rgba(0,0,0,.38));
-        opacity: .9;
-        transform: rotate(-15deg);
-      }
+      .hero::before,
+      .hero::after { display: none; }
       .hero > *, section > .shell { position: relative; z-index: 1; }
       .hero h1 { color: var(--paper); text-shadow: 0 4px 26px rgba(0,0,0,.48); }
       .hero p { color: rgba(255,255,255,.84); }
@@ -110,6 +89,7 @@
         height: min(48vw, 34rem);
         pointer-events: none;
       }
+      .hero-decor { display: none; }
       .hero-decor::before {
         position: absolute;
         right: 4.4rem;
@@ -169,22 +149,19 @@
 
       .marble {
         background:
-          radial-gradient(circle at 18% 8%, rgba(215,170,99,.1), transparent 18rem),
-          radial-gradient(circle at 86% 18%, rgba(178,172,164,.28), transparent 22rem),
-          linear-gradient(122deg, rgba(98,83,91,.06) 0 1px, transparent 1px 36%),
-          linear-gradient(135deg, #fff9f0, #f2e7d7);
+          linear-gradient(90deg, rgba(8,17,29,.82), rgba(8,17,29,.58) 52%, rgba(8,17,29,.34));
       }
       .marble::before {
         position: absolute;
         inset: 0;
         background:
-          linear-gradient(112deg, transparent 0 28%, rgba(215,170,99,.16) 29%, transparent 30%),
-          linear-gradient(128deg, transparent 0 72%, rgba(216,183,181,.22) 73%, transparent 78%),
-          repeating-linear-gradient(150deg, rgba(17,24,39,.035) 0 1px, transparent 1px 46px);
+          radial-gradient(circle at 82% 12%, rgba(215,170,99,.08), transparent 20rem);
         content: "";
         pointer-events: none;
       }
       .section-head { max-width: 760px; }
+      .marble .section-head h2 { color: var(--paper); }
+      .marble .section-head .lead { color: rgba(255,255,255,.78); }
       .section-head.center { margin: 0 auto; text-align: center; }
       .kicker { margin-bottom: 12px; color: var(--success); font-size: 14px; font-weight: 950; letter-spacing: .25em; text-transform: uppercase; }
       .grid { display: grid; gap: 20px; }
@@ -201,9 +178,7 @@
       .module-bottom { margin-top: 18px; border-top: 1px solid rgba(200,155,79,.22); padding-top: 16px; color: rgba(58,27,53,.56); font-size: 14px; font-weight: 800; }
       .progress-section {
         background:
-          radial-gradient(circle at 70% 25%, rgba(216,183,181,.18), transparent 24rem),
-          linear-gradient(118deg, transparent 0 62%, rgba(215,170,99,.1) 63%, transparent 65%),
-          linear-gradient(180deg, #08111d 0%, #101b29 100%);
+          linear-gradient(90deg, rgba(8,17,29,.94), rgba(8,17,29,.72) 55%, rgba(8,17,29,.38));
         color: white;
       }
       .progress-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 42px; }
